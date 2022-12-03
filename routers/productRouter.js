@@ -49,13 +49,13 @@ productRouter.put('/:id', isAuth, isAdmin, expressAsyncHandler(async(req,res)=>{
         }
     }))
     
-//GETL ALL PRODUCTS
+//GET ALL PRODUCTS
 productRouter.get('/', expressAsyncHandler(async (req,res)=>{
      const products = await Product.find({})                             // Obtiene todos los productos
     res.send(products)
 }))
 
-//GET A A SINGLE PRODUCT
+//GET A SINGLE PRODUCT
     productRouter.get('/:id', expressAsyncHandler(async (req,res)=>{
         const product = await Product.findById(req.params.id)                             // Obtiene un solo producto
        res.send(product)
